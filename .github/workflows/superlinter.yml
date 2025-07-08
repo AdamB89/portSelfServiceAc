@@ -1,0 +1,22 @@
+name: Super-Linter
+
+on: push
+
+jobs: 
+ super-lint:
+  name: Lint code Base
+  runs-on: ubuntu-latest
+  steps: 
+   - name: Checkuot Code
+     uses: actions/chectout@v2
+
+   - name: Run Super Linter
+     uses: github/superlinter@v3
+     env:
+      DEFAULT_BRANCH: main
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    
+
+    
+    
